@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Theme script: runs before first paint to prevent flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        } catch (e) {
+          // localStorage may be blocked
+        }
+      })();
+    </script>
+
+    <title>Ninja Hashmi — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Ninja Hashmi — Freelance web developer and CS student from Karachi. Building clean, responsive frontend interfaces. Open to internships, junior roles and freelance work."
+    />
+    <link rel="canonical" href="[SITE_URL]/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="[SITE_URL]/" />
+    <meta property="og:title" content="Ninja Hashmi — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Freelance web developer and CS student from Karachi. Clean, responsive frontend work."
+    />
+    <meta property="og:image" content="[SITE_URL]/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ninja Hashmi — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Freelance web developer and CS student from Karachi. Clean, responsive frontend work."
+    />
+    <meta name="twitter:image" content="[SITE_URL]/og-image.png" />
+
+    <meta name="theme-color" content="#e07c2a" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <!-- Static form kept for optional Netlify use; on Vercel the form uses mailto fallback -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
