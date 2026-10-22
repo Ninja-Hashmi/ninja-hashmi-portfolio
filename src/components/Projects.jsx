@@ -1,6 +1,7 @@
 import { projects } from '../data/projects.js';
 import Button from './ui/Button.jsx';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { GitHubIcon } from './ui/BrandIcons.jsx';
 
 /**
  * Projects section.
@@ -109,7 +110,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github className="h-3.5 w-3.5" aria-hidden="true" />
+                    <GitHubIcon className="h-3.5 w-3.5" />
                     GitHub
                   </Button>
                 ) : project.type === 'client' ? (
